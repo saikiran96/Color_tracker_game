@@ -21,8 +21,6 @@ import tkinter as HUE_VALUES
 
 
 
-
-
 master = Tk()
 
 master.geometry("400x250")
@@ -30,7 +28,8 @@ master.title(" Values index ")
 
 
 
-Label(master,text='Enter the hue Values:').place(x=100,y=0)
+Label(master,text='Set the values for required color').place(x=100,y=0)
+Label(master,text='NOTE: Use fine tuning option to adjust for exact precision of color').place(x=20,y=230)
 
 
 
@@ -136,7 +135,12 @@ def fine_tuning ():
 
         result = cv2.bitwise_and(frame,frame,mask = mask)
 
+        cv2.putText(result,'Set HSV Value then', (10,400), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255),2)
+        cv2.putText(result,'press Esc to exit and press START', (10,425), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255),2)
+
+
         cv2.imshow('result',result)
+
 
         print(type(HUE_MIN),SAT_MIN,SAT_MIN)
 
@@ -178,7 +182,7 @@ def fine_tuning ():
 
 HUE_VALUES.Button(master, text="START", command = fun ).place(x=180,y=180)
 
-HUE_VALUES.Button(master, text="FINE TUNING", command = fine_tuning).place(x=180,y=160)
+HUE_VALUES.Button(master, text="FINE TUNING", command = fine_tuning).place(x=300,y=80)
 
 
 
@@ -212,7 +216,7 @@ while True:
     lower = np.array([HUE_MIN, SAT_MIN,VAL_MIN ],np.uint8);
     upper = np.array([HUE_MAX,SAT_MAX , SAT_MAX],np.uint8);
 
-    print (HUE_MIN, SAT_MIN,VAL_MIN);
+
 
     mask= cv2.inRange(gray, lower, upper)
 
