@@ -14,14 +14,19 @@ Install the Required packages and run it in any IDE
 
 
 Screenshots:
+
 Enter the values:
+<br>
 <img src="https://github.com/saikiran96/Color_tracker_game/blob/main/Media/Values_index.gif" width="200" height="200" />
 
 
 Adjust the HSV Values:
+
+<br>
 <img src="https://github.com/saikiran96/Color_tracker_game/blob/main/Media/Fine_Tuning.gif" width="200" height="200" />
 
 Check for the Gestures :
+<br>
 <img src="https://github.com/saikiran96/Color_tracker_game/blob/main/Media/Final.gif" width="200" height="200" />
 
 
